@@ -22,10 +22,11 @@ class DoFlask:
             else:
                 gradegefunden = 0
 
-            if gradegefunden == 2:
+            if gradegefunden >= 2:
+                count -= 1
                 sleep(uniform(1, 2))
 
-            sleep(uniform(0.001, 0.1))
+            sleep(uniform(0.001, 0.2))
 
             if is_pressed('0'):
                 print(f'{count} mal den kack gedrückt')
