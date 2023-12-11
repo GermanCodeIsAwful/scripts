@@ -8,6 +8,7 @@ class DoFlask:
     def __init__(self, pos, rgb):
         self.pos = pos
         self.rgb = rgb
+        print('init done')
 
     def start(self):
         count = 0
@@ -26,7 +27,7 @@ class DoFlask:
 
             sleep(uniform(0.001, 0.1))
 
-            if is_pressed('q'):
+            if is_pressed('0'):
                 print(f'{count} mal den kack gedrückt')
                 print('break')
                 break
@@ -45,8 +46,12 @@ def get_pos():
 
 if __name__ == '__main__':
 
-    input('rdy?')
-    pos, rgb = get_pos()
+    print('rdy?')
+    while True:
+        if is_pressed('1'):
+            sleep(0.5)
+            pos, rgb = get_pos()
+            break
 
     if not pos:
         exit()
@@ -56,7 +61,7 @@ if __name__ == '__main__':
     while True:
         sleep(0.5)
 
-        if is_pressed('w'):
+        if is_pressed('9'):
             do_flask.start()
 
         if is_pressed('r'):
